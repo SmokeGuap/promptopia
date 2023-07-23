@@ -19,8 +19,7 @@ const PromptCard = ({
   const [copied, setCopied] = useState('');
 
   const handleProfileClick = () => {
-    if (post.creator._id === session?.user?.name)
-      return router.push('/profile');
+    if (post.creator._id === session?.user.id) return router.push('/profile');
 
     router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
   };
@@ -32,7 +31,7 @@ const PromptCard = ({
   };
 
   return (
-    <div className='flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit'>
+    <div className='flex-1 break-inside-avoid rounded-lg border border-gray-300/30 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit hover:shadow-xl'>
       <div className='flex justify-between items-start gap-5'>
         <div
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'

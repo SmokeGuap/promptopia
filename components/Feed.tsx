@@ -47,15 +47,9 @@ const Feed = () => {
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    clearTimeout(searchTimeout);
     setSearchText(e.target.value);
-
-    setSearchTimeout(
-      setTimeout(() => {
-        const searchResult = filterPrompts(e.target.value);
-        setSearchedResults(searchResult);
-      }, 500)
-    );
+    const searchResult = filterPrompts(e.target.value);
+    setSearchedResults(searchResult);
   };
 
   const handleTagClick = (tagName: string) => {

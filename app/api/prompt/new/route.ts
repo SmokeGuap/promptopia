@@ -1,7 +1,8 @@
 import Prompt from '@/models/prompt';
+import { ExtendedNextApiRequest } from '@/types';
 import { connectToDB } from '@/utils/database';
 
-export const POST = async (request) => {
+export const POST = async (request: ExtendedNextApiRequest) => {
   const { userId, prompt, tag } = await request.json();
 
   try {

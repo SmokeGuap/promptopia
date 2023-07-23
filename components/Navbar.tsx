@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className='flex justify-between items-center w-full mb-16 pt-3 '>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image src='/images/logo.svg' width={30} height={30} alt='Logo' />
-        <p className='max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide'>
+        <p className='max-sm:hidden font-satoshi font-semibold text-lg text-primary tracking-wide'>
           Promptopia
         </p>
       </Link>
@@ -41,13 +41,13 @@ const Navbar = () => {
           <div className='flex gap-3 md:gap-5'>
             <Link
               href='/create-prompt'
-              className='rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center'
+              className='rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-primary hover:border-primary text-center text-sm font-inter flex items-center justify-center'
             >
               Create Post
             </Link>
             <button
               onClick={() => signOut()}
-              className='rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center'
+              className='rounded-full border border-primary bg-transparent py-1.5 px-5 text-primary transition-all hover:bg-primary hover:text-white text-center text-sm font-inter flex items-center justify-center'
             >
               Sign Out
             </button>
@@ -57,7 +57,7 @@ const Navbar = () => {
                 width={37}
                 height={37}
                 alt='profile'
-                className='rounded-full'
+                className='rounded-full hover:scale-110'
               />
             </Link>
           </div>
@@ -70,7 +70,7 @@ const Navbar = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className='rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center'
+                  className='rounded-full border border-primary bg-primary py-1.5 px-5 text-white transition-all hover:bg-white hover:text-primary text-center text-sm font-inter flex items-center justify-center'
                 >
                   Sign In
                 </button>

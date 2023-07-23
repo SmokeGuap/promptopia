@@ -1,3 +1,4 @@
+import { NextApiRequest } from 'next';
 import { Dispatch, SetStateAction } from 'react';
 
 export type Form = {
@@ -10,7 +11,7 @@ export type Form = {
     }>
   >;
   submitting: boolean;
-  handleSubmit: (e: any) => Promise<void>;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
 };
 
 export type Post = {
@@ -39,3 +40,9 @@ export type PromptCard = {
   handleTagClick?: (tagName: string) => void;
   handleDelete?: (post: Post) => Promise<void>;
 };
+
+export interface ExtendedNextApiRequest extends NextApiRequest {
+  body: {
+    id: number;
+  };
+}

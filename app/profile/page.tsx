@@ -13,14 +13,15 @@ const MyProfile = () => {
 
   const [myPosts, setMyPosts] = useState([]);
 
+  const fetchPosts = async () => {
+    const response = await fetch(`/api/users/${session?.user?.id}/posts`);
+    const data = await response.json();
+    setMyPosts(data);
+  };
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`);
-      const data = await response.json();
-      setMyPosts(data);
-    };
-    if (session?.user.id) fetchPosts();
-  }, [session?.user.id]);
+    if (session?.user?.id) fetchPosts();
+  }, [session?.user?.id]);
 
   const handleEdit = (post: Post) => {
     router.push(`/update-prompt?id=${post._id}`);
