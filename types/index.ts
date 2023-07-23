@@ -12,3 +12,8 @@ export type Form = {
   submitting: boolean;
   handleSubmit: (e: any) => Promise<void>;
 };
+
+export type PromptCardList = {
+  data: string[];
+  handleTagClick: (tagName: any) => void;
+};
