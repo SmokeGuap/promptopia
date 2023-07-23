@@ -13,7 +13,29 @@ export type Form = {
   handleSubmit: (e: any) => Promise<void>;
 };
 
+export type Post = {
+  creator: { username: string; _id: string; image: string; email: string };
+  prompt: string;
+  tag: string;
+  _id: string;
+};
+
 export type PromptCardList = {
-  data: string[];
-  handleTagClick: (tagName: any) => void;
+  data: Post[];
+  handleTagClick: (tagName: string) => void;
+};
+
+export type Profile = {
+  name: string;
+  desc: string;
+  data: Post[];
+  handleEdit: (post: Post) => void;
+  handleDelete: (post: Post) => Promise<void>;
+};
+
+export type PromptCard = {
+  post: Post;
+  handleEdit?: (post: Post) => void;
+  handleTagClick?: (tagName: string) => void;
+  handleDelete?: (post: Post) => Promise<void>;
 };

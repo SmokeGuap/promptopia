@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import PromptCard from './PromptCard';
-import { PromptCardList } from '@/types';
+import { Post, PromptCardList } from '@/types';
 
 const PromptCardList = ({ data, handleTagClick }: PromptCardList) => {
   return (
@@ -36,17 +36,17 @@ const Feed = () => {
     fetchPosts();
   }, []);
 
-  const filterPrompts = (searchtext) => {
-    const regex = new RegExp(searchtext, 'i');
+  const filterPrompts = (text: string) => {
+    const regex = new RegExp(text, 'i');
     return allPosts.filter(
-      (item) =>
+      (item: Post) =>
         regex.test(item.creator.username) ||
         regex.test(item.tag) ||
         regex.test(item.prompt)
     );
   };
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
 
@@ -58,7 +58,7 @@ const Feed = () => {
     );
   };
 
-  const handleTagClick = (tagName) => {
+  const handleTagClick = (tagName: string) => {
     setSearchText(tagName);
 
     const searchResult = filterPrompts(tagName);
