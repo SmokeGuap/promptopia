@@ -8,11 +8,12 @@ import {
   getProviders,
   LiteralUnion,
   ClientSafeProvider,
+  useSession,
 } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-  const isLoggedIn = true;
+  const { data: session } = useSession();
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [providers, setProviders] = useState<Record<
     LiteralUnion<string>,
@@ -36,7 +37,7 @@ const Navbar = () => {
         </p>
       </Link>
       <div className='sm:flex hidden'>
-        {isLoggedIn ? (
+        {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
             <Link
               href='/create-prompt'
@@ -52,7 +53,7 @@ const Navbar = () => {
             </button>
             <Link href='/profile'>
               <Image
-                src='/images/profile.svg'
+                src={String(session?.user.image)}
                 width={37}
                 height={37}
                 alt='profile'
@@ -66,7 +67,9 @@ const Navbar = () => {
               Object.values(providers).map((provider) => (
                 <button
                   key={provider.name}
-                  onClick={() => signIn(provider.id)}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
                   className='rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center'
                 >
                   Sign In
@@ -76,10 +79,10 @@ const Navbar = () => {
         )}
       </div>
       <div className='sm:hidden flex relative'>
-        {isLoggedIn ? (
+        {session?.user ? (
           <div className='flex'>
             <Image
-              src='/images/profile.svg'
+              src={String(session?.user.image)}
               width={37}
               height={37}
               alt='profile'
