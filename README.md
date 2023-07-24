@@ -3,8 +3,8 @@
 It is a prompting tool
 
 ## Screenshots
-<img src="https://github.com/SmokeGuap/promptopia/assets/87711568/340c14c5-5f24-4bc9-a786-14f0baa47070" width="300">
-<img src="https://github.com/SmokeGuap/promptopia/assets/87711568/8b87e02a-7cbc-4243-88d8-8a6a8a66dc65" width="400">
+<img src="https://github.com/SmokeGuap/promptopia/assets/87711568/340c14c5-5f24-4bc9-a786-14f0baa47070" width="500">
+<img src="https://github.com/SmokeGuap/promptopia/assets/87711568/8b87e02a-7cbc-4243-88d8-8a6a8a66dc65" width="500">
 <img src="https://github.com/SmokeGuap/promptopia/assets/87711568/ac706685-1d5f-4e3f-a1be-6061616d8884" width="500">
 
 ## Used technologies
