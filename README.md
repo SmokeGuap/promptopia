@@ -2,6 +2,12 @@
 
 It is a prompting tool
 
+## Screenshots
+![image](https://github.com/SmokeGuap/promptopia/assets/87711568/340c14c5-5f24-4bc9-a786-14f0baa47070 )
+![image](https://github.com/SmokeGuap/promptopia/assets/87711568/8b87e02a-7cbc-4243-88d8-8a6a8a66dc65)
+![image](https://github.com/SmokeGuap/promptopia/assets/87711568/ac706685-1d5f-4e3f-a1be-6061616d8884)
+<img src="https://github.com/SmokeGuap/promptopia/assets/87711568/340c14c5-5f24-4bc9-a786-14f0baa47070" width="100" height="100">
+
 ## Used technologies
 
 - Next
@@ -20,3 +26,4 @@ MONGODB_URI='mongodb://127.0.0.1:27017/'
 In the project directory, you can run: `npm run dev`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
